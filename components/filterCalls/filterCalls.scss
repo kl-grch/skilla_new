@@ -1,0 +1,43 @@
+.filter-calls {
+  color: var(--text-secondary);
+  opacity: 0.87;
+  font-size: 14px;
+  line-height: 148%;
+  font-weight: 400;
+  display: flex;
+  gap: 46px;
+  justify-content: flex-end;
+  &__reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    opacity: 1;
+    cursor: pointer;
+    // &--active {
+    //   color: var(--accent);
+    //   svg path {
+    //     fill: var(--accent);
+    //   }
+    // }
+  }
+  &__filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      &:hover {
+        color: var(--accent);
+        cursor: pointer;
+        svg path {
+          fill: var(--accent);
+        }
+      }
+    }
+  }
+}

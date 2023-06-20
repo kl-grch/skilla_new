@@ -1,0 +1,52 @@
+.button-balance {
+  width: 145px;
+  height: 40px;
+  background-color: var(--white);
+  border-radius: 48px;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 148%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  &__label {
+    color: var(--text-header);
+    font-weight: 400;
+    span {
+      color: var(--text);
+      font-weight: 500;
+      overflow: hidden;
+    }
+  }
+
+  &:hover {
+    .button-balance {
+      &__label {
+        span {
+          color: var(--hover);
+        }
+      }
+      &__icon {
+        svg path {
+          fill: var(--hover);
+        }
+      }
+    }
+  }
+  &:active {
+    .button-balance {
+      &__label {
+        span {
+          color: var(--text);
+        }
+      }
+      &__icon {
+        svg path {
+          fill: var(--active);
+        }
+      }
+    }
+  }
+}

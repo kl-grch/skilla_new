@@ -1,0 +1,126 @@
+.table-calls {
+  background-color: var(--white);
+  box-shadow: 0px 4px 5px #e9edf3;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  &__table {
+    padding-top: 24px;
+    padding-bottom: 57px;
+    width: 100%;
+    border-spacing: 0;
+    thead {
+      tr {
+        th {
+          color: var(--text-header);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 100%;
+          padding-bottom: 20px;
+          padding-top: 2px;
+          text-align: left;
+          vertical-align: middle;
+          input[type="checkbox"] {
+            height: 16px;
+            width: 16px;
+          }
+        }
+        .thead {
+          &__checkbox {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        &:hover {
+          cursor: pointer;
+          background-color: rgba(212, 223, 243, 0.17);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          .td {
+            &__checkbox {
+              visibility: visible;
+            }
+          }
+        }
+        td:first-child {
+          border: none;
+        }
+        td {
+          border-top: 1px solid #eaf0fa;
+          height: 65px;
+          input[type="checkbox"] {
+            height: 16px;
+            width: 16px;
+          }
+        }
+        .td {
+          &__checkbox {
+            visibility: hidden;
+          }
+          &__time {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 140%;
+          }
+          &__call {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 140%;
+          }
+          &__source {
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 140%;
+          }
+          &__rate {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: var(--red);
+          }
+          &__duration {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 140%;
+          }
+        }
+      }
+    }
+    .checkbox {
+      padding-left: 12px;
+      padding-right: 12px;
+      width: 40px;
+    }
+    .type {
+      width: 56px;
+      padding-right: 32px;
+    }
+    .time {
+      width: 89px;
+      padding-right: 48px;
+    }
+    .employee {
+      width: 128px;
+      padding-right: 60px;
+    }
+    .call {
+      width: 326px;
+      padding-right: 72px;
+    }
+    .source {
+      width: 214px;
+      padding-right: 17px;
+    }
+    .rate {
+      width: 196px;
+      padding-right: 50px;
+    }
+    .duration {
+      text-align: right;
+      padding-right: 40px;
+    }
+  }
+}

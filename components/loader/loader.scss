@@ -1,0 +1,19 @@
+.loader {
+  width: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  &__icon {
+    padding: 4px 0 4px 1px;
+    img {
+      height: 12px;
+      width: 12px;
+      }
+  }
+}
