@@ -1,3 +1,5 @@
+"use client";
+
 import "./buttonBalance.scss";
 
 export default function ButtonBalance() {

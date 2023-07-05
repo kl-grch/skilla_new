@@ -1,9 +1,36 @@
-import "./filterCalls.scss";
+"use client";
 
-export default function FilterCalls(params) {
+import "./filterCalls.scss";
+import FilterCallsType from "./filterCallsType/FilterCallsType";
+import FilterCallsEmployers from "./filterCallsEmployers/FilterCallsEmployers";
+import clsx from "clsx";
+import FilterCallsRings from "./filterCallsRings/FilterCallsRings";
+import FilterCallsSource from "./filterCallsSource/FilterCallsSource";
+import FilterCallsRate from "./filterCallsRate/FilterCallsRate";
+import FilterCallsErrors from "./filterCallsErrors/FilterCallsErrors";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setFilterStatus,
+  remoteFilterStatus,
+} from "@/redux/features/callsSlice";
+import { useEffect } from "react";
+
+export default function FilterCalls() {
+  const { filterStatus } = useSelector((state) => state.calls);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setFilterStatus());
+  }, [filterStatus]);
+
   return (
     <div className="filter-calls">
-      <div className="filter-calls__reset">
+      <div
+        className={clsx("filter-calls__reset", {
+          "filter-calls__reset--active": filterStatus,
+        })}
+        onClick={() => dispatch(remoteFilterStatus())}
+      >
         Сбросить фильтры
         <svg
           width="15"
@@ -25,97 +52,14 @@ export default function FilterCalls(params) {
           </defs>
         </svg>
       </div>
+
       <div className="filter-calls__filters">
-        <div className="filters__all-type">
-          Все типы
-          <svg
-            width="18"
-            height="21"
-            viewBox="0 0 18 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.9001 8.60117L13.3991 8.10024C13.3324 8.03334 13.2555 8 13.1685 8C13.0818 8 13.0049 8.03334 12.9382 8.10024L9.00005 12.0382L5.06209 8.10034C4.9953 8.03345 4.91844 8.00011 4.83161 8.00011C4.74475 8.00011 4.66789 8.03345 4.60113 8.10034L4.10024 8.60131C4.03334 8.66806 4 8.74492 4 8.83179C4 8.91858 4.03345 8.99544 4.10024 9.06219L8.76957 13.7316C8.83633 13.7984 8.91322 13.8318 9.00005 13.8318C9.08688 13.8318 9.16364 13.7984 9.23036 13.7316L13.9001 9.06219C13.9668 8.99541 14 8.91854 14 8.83179C14 8.74492 13.9668 8.66806 13.9001 8.60117Z"
-              fill="#ADBFDF"
-            />
-          </svg>
-        </div>
-        <div className="filters__all-type">
-          Все сотрудники
-          <svg
-            width="18"
-            height="21"
-            viewBox="0 0 18 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.9001 8.60117L13.3991 8.10024C13.3324 8.03334 13.2555 8 13.1685 8C13.0818 8 13.0049 8.03334 12.9382 8.10024L9.00005 12.0382L5.06209 8.10034C4.9953 8.03345 4.91844 8.00011 4.83161 8.00011C4.74475 8.00011 4.66789 8.03345 4.60113 8.10034L4.10024 8.60131C4.03334 8.66806 4 8.74492 4 8.83179C4 8.91858 4.03345 8.99544 4.10024 9.06219L8.76957 13.7316C8.83633 13.7984 8.91322 13.8318 9.00005 13.8318C9.08688 13.8318 9.16364 13.7984 9.23036 13.7316L13.9001 9.06219C13.9668 8.99541 14 8.91854 14 8.83179C14 8.74492 13.9668 8.66806 13.9001 8.60117Z"
-              fill="#ADBFDF"
-            />
-          </svg>
-        </div>
-        <div className="filters__all-type">
-          Все звонки
-          <svg
-            width="18"
-            height="21"
-            viewBox="0 0 18 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.9001 8.60117L13.3991 8.10024C13.3324 8.03334 13.2555 8 13.1685 8C13.0818 8 13.0049 8.03334 12.9382 8.10024L9.00005 12.0382L5.06209 8.10034C4.9953 8.03345 4.91844 8.00011 4.83161 8.00011C4.74475 8.00011 4.66789 8.03345 4.60113 8.10034L4.10024 8.60131C4.03334 8.66806 4 8.74492 4 8.83179C4 8.91858 4.03345 8.99544 4.10024 9.06219L8.76957 13.7316C8.83633 13.7984 8.91322 13.8318 9.00005 13.8318C9.08688 13.8318 9.16364 13.7984 9.23036 13.7316L13.9001 9.06219C13.9668 8.99541 14 8.91854 14 8.83179C14 8.74492 13.9668 8.66806 13.9001 8.60117Z"
-              fill="#ADBFDF"
-            />
-          </svg>
-        </div>
-        <div className="filters__all-type">
-          Все источники
-          <svg
-            width="18"
-            height="21"
-            viewBox="0 0 18 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.9001 8.60117L13.3991 8.10024C13.3324 8.03334 13.2555 8 13.1685 8C13.0818 8 13.0049 8.03334 12.9382 8.10024L9.00005 12.0382L5.06209 8.10034C4.9953 8.03345 4.91844 8.00011 4.83161 8.00011C4.74475 8.00011 4.66789 8.03345 4.60113 8.10034L4.10024 8.60131C4.03334 8.66806 4 8.74492 4 8.83179C4 8.91858 4.03345 8.99544 4.10024 9.06219L8.76957 13.7316C8.83633 13.7984 8.91322 13.8318 9.00005 13.8318C9.08688 13.8318 9.16364 13.7984 9.23036 13.7316L13.9001 9.06219C13.9668 8.99541 14 8.91854 14 8.83179C14 8.74492 13.9668 8.66806 13.9001 8.60117Z"
-              fill="#ADBFDF"
-            />
-          </svg>
-        </div>
-        <div className="filters__all-type">
-          Все оценки
-          <svg
-            width="18"
-            height="21"
-            viewBox="0 0 18 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.9001 8.60117L13.3991 8.10024C13.3324 8.03334 13.2555 8 13.1685 8C13.0818 8 13.0049 8.03334 12.9382 8.10024L9.00005 12.0382L5.06209 8.10034C4.9953 8.03345 4.91844 8.00011 4.83161 8.00011C4.74475 8.00011 4.66789 8.03345 4.60113 8.10034L4.10024 8.60131C4.03334 8.66806 4 8.74492 4 8.83179C4 8.91858 4.03345 8.99544 4.10024 9.06219L8.76957 13.7316C8.83633 13.7984 8.91322 13.8318 9.00005 13.8318C9.08688 13.8318 9.16364 13.7984 9.23036 13.7316L13.9001 9.06219C13.9668 8.99541 14 8.91854 14 8.83179C14 8.74492 13.9668 8.66806 13.9001 8.60117Z"
-              fill="#ADBFDF"
-            />
-          </svg>
-        </div>
-        <div className="filters__all-type">
-          Все ошибки
-          <svg
-            width="18"
-            height="21"
-            viewBox="0 0 18 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.9001 8.60117L13.3991 8.10024C13.3324 8.03334 13.2555 8 13.1685 8C13.0818 8 13.0049 8.03334 12.9382 8.10024L9.00005 12.0382L5.06209 8.10034C4.9953 8.03345 4.91844 8.00011 4.83161 8.00011C4.74475 8.00011 4.66789 8.03345 4.60113 8.10034L4.10024 8.60131C4.03334 8.66806 4 8.74492 4 8.83179C4 8.91858 4.03345 8.99544 4.10024 9.06219L8.76957 13.7316C8.83633 13.7984 8.91322 13.8318 9.00005 13.8318C9.08688 13.8318 9.16364 13.7984 9.23036 13.7316L13.9001 9.06219C13.9668 8.99541 14 8.91854 14 8.83179C14 8.74492 13.9668 8.66806 13.9001 8.60117Z"
-              fill="#ADBFDF"
-            />
-          </svg>
-        </div>
+        <FilterCallsType />
+        <FilterCallsEmployers />
+        <FilterCallsRings />
+        <FilterCallsSource />
+        <FilterCallsRate />
+        <FilterCallsErrors />
       </div>
     </div>
   );

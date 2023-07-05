@@ -1,0 +1,13 @@
+svg {
+    cursor: pointer;
+    &:hover {
+        path {
+            fill: var(--accent);
+        }
+    }
+    &:active {
+        path {
+            fill: var(--active);
+        }
+    }
+}

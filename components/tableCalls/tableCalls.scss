@@ -42,6 +42,25 @@
             &__checkbox {
               visibility: visible;
             }
+            &__duration {
+              .duration {
+                &__time {
+                  display: none;
+                }
+                &__player {
+                  display: block;
+                }
+              }
+            }
+            &__call {
+              &::before {
+                content: url("/images/icons/phone.svg");
+                position: absolute;
+                top: 50%;
+                left: calc(-16px + -8px);
+                transform: translateY(-50%);
+              }
+            }
           }
         }
         td:first-child {
@@ -65,6 +84,7 @@
             line-height: 140%;
           }
           &__call {
+            position: relative;
             font-weight: 400;
             font-size: 15px;
             line-height: 140%;
@@ -82,9 +102,16 @@
             color: var(--red);
           }
           &__duration {
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 140%;
+            .duration {
+              &__time {
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 140%;
+              }
+              &__player {
+                display: none;
+              }
+            }
           }
         }
       }

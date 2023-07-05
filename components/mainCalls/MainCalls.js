@@ -1,12 +1,11 @@
-'use client';
+"use client";
 
 import ButtonBalance from "../buttonBalance/ButtonBalance";
 import DatePicker from "../datePicker/DatePicker";
 import FilterCalls from "../filterCalls/FilterCalls";
 import SearchCalls from "../searchCalls/SearchCalls";
 import TableCalls from "../tableCalls/TableCalls";
-import './mainCalls.scss';
-
+import "./mainCalls.scss";
 
 export default function MainCalls() {
   return (
@@ -16,11 +15,11 @@ export default function MainCalls() {
         <DatePicker />
       </div>
       <div className="main-calls__filters">
-        <SearchCalls/>
-        <FilterCalls/>
+        <SearchCalls />
+        <FilterCalls />
       </div>
       <div className="main-calls__table">
-        <TableCalls/>
+        <TableCalls />
       </div>
     </div>
   );

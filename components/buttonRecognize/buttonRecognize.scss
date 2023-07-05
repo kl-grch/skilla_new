@@ -1,0 +1,24 @@
+.button-recognize {
+  display: inline-flex;
+  padding: 9px 24px 11px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  background: var(--white);
+  color: var(--accent);
+  text-align: center;
+  font-size: 14px;
+  line-height: 140%;
+  user-select: none;
+  &:hover {
+    border: 1px solid var(--ui);
+    background: var(--ui);
+    color: var(--white);
+  }
+  &:active {
+    border: 1px solid var(--active);
+    color: var(--active);
+    background: var(--white);
+  }
+}

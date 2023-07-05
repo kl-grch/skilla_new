@@ -1,28 +1,29 @@
-import useSWR from "swr";
-import fetcher from "@/libs/fetch";
-// const fetcher = (...args) => {
-//   fetch(...args)
-//     .then((res) => res.json())
-//     .then((res) => console.log(res));
-// };
+"use client";
 
-export default function useCalls(dateStart, dateEnd) {
-  const urlAPI = `https://api.skilla.ru/mango/getList?date_start=${dateStart}&date_end=${dateEnd}`;
-  const { data, error } = useSWR(
-    urlAPI,
-    fetcher(urlAPI, {
+import useSWR from "swr";
+import { useDispatch } from "react-redux";
+import { getAllCalls } from "../redux/features/callsSlice";
+
+export default function useCalls(dateStart, dateEnd, inOut) {
+  const dispatch = useDispatch();
+  const url = `https://api.skilla.ru/mango/getList?date_start=${dateStart}&date_end=${dateEnd}${inOut}`;
+
+  const fetcher = (...args) =>
+    fetch(url, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json;charset=utf-8",
+        "Content-Type": "application/json;charset=UTF-8",
         Authorization: "Bearer testtoken",
       },
     })
-  );
+      .then((res) => res.json())
+      .then((data) => dispatch(getAllCalls(data)));
+
+  const { data, error, isLoading } = useSWR(url, fetcher);
 
   return {
     data,
     error,
-    dateStart,
-    dateEnd,
+    isLoading,
   };
 }

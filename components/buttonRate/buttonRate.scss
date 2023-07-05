@@ -1,0 +1,24 @@
+.button-rate {
+  display: inline-flex;
+  padding: 6px 8px;
+  align-items: flex-start;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: SF Pro Display;
+  line-height: 100%;
+  &__red {
+    border: 1px solid var(--red);
+    background: #fee9ef;
+    color: var(--red);
+  }
+  &__blue {
+    border: 1px solid var(--ui-icon);
+    background: var(--ui-secondary);
+    color: var(--text);
+  }
+  &__green {
+    border: 1px solid var(--green, #28a879);
+    background: var(--ui-light-green, #dbf8ef);
+    color: var(--text-green, #00a775);
+  }
+}

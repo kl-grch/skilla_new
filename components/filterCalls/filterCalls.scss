@@ -1,43 +1,35 @@
 .filter-calls {
-  color: var(--text-secondary);
-  opacity: 0.87;
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
   font-size: 14px;
   line-height: 148%;
-  font-weight: 400;
-  display: flex;
-  gap: 46px;
-  justify-content: flex-end;
   &__reset {
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 4px;
-    opacity: 1;
     cursor: pointer;
-    // &--active {
-    //   color: var(--accent);
-    //   svg path {
-    //     fill: var(--accent);
-    //   }
-    // }
-  }
-  &__filters {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    div {
+    display: none;
+    white-space: nowrap;
+
+    &--active {
+      display: block;
+      color: var(--accent, #002cfb);
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 4px;
-      &:hover {
-        color: var(--accent);
-        cursor: pointer;
-        svg path {
-          fill: var(--accent);
-        }
+      white-space: nowrap;
+
+      svg path {
+        fill: var(--accent);
       }
     }
+  }
+  &__filters {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
   }
 }

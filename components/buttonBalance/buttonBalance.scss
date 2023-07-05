@@ -20,6 +20,10 @@
       overflow: hidden;
     }
   }
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
 
   &:hover {
     .button-balance {

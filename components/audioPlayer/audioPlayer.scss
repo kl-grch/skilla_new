@@ -1,0 +1,18 @@
+.audio-player {
+  audio {
+    width: 352px;
+    height: 48px;
+    &::-webkit-media-controls-enclosure {
+      background-color: #eaf0fa;
+      border-radius: 48px;
+    }
+    &::-webkit-media-controls-time-remaining-display {
+      display: none;
+    }
+    &::-webkit-media-controls-current-time-display {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 145%;
+    }
+  }
+}

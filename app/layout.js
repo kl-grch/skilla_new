@@ -1,11 +1,11 @@
-import "./styles/globals.scss";
+import "../styles/globals.scss";
 import localFont from "next/font/local";
-
 import Sidebar from "@/components/sidebar/Sidebar";
+import { ReduxProvider } from "@/redux/provider";
 
 const myFont = localFont({
   src: "../public/fonts/SFProDisplay-Regular.woff2",
-  weight: '500',
+  weight: "500",
   display: "swap",
 });
 
@@ -19,8 +19,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body className={myFont.className}>
-        <Sidebar />
-        {children}
+        <ReduxProvider>
+          <Sidebar />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -1,0 +1,55 @@
+// @import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --ui: #0024cb;
+  --background: #f1f4f9;
+  --background-sidebar: #091336;
+
+  --sidebar-link: rgba(255, 255, 255, 0.6);
+
+  --accent: #002cfb;
+  --accent-opacity: rgba(0, 44, 251, 0.13);
+  --hover: #0024cb;
+  --active: #274bc8;
+
+  --white: #ffffff;
+
+  --text: #122945;
+  --text-header: #899cb1;
+  --text-green: #00a775;
+  --text-secondary: #5e7793;
+
+  --green: #28a879;
+  --yellow: #ffd500;
+  --red: #ea1a4f;
+
+  --scale-bg: #dee6f5;
+  --ui-icon: #adbfdf;
+  --ui-secondary: #d8e4fb;
+  --ui-light-green: #dbf8ef;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  color: var(--text);
+}
+
+body {
+  background-color: var(--background);
+  display: flex;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}

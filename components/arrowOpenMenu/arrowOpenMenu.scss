@@ -1,0 +1,14 @@
+.arrow-open-menu {
+  cursor: pointer;
+  &--rotate {
+    transform: rotate(180deg);
+    path {
+      fill: var(--accent);
+    }
+  }
+  &:hover {
+    path {
+      fill: var(--hover);
+    }
+  }
+}
